@@ -2,8 +2,9 @@
 #include "Person.h"
 
 PersonList shallowCopyPersonList(PersonList pl) {
-    PersonList copy;
-    copy.numPeople = pl.numPeople;
-    copy.people = pl.people; // Shallow copy: both lists share the same array of Person structs
-    return copy;
+    PersonList newList;
+    newList.numPeople = pl.numPeople;
+    
+    newList.people = pl.people;
+    return newList;
 }

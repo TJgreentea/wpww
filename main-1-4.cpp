@@ -2,26 +2,27 @@
 #include <iostream>
 #include "Person.h"
 
-extern PersonList createPersonList(int n);
-extern PersonList shallowCopyPersonList(PersonList pl);
+// Forward declaration
+PersonList shallowCopyPersonList(PersonList pl);
 
 int main() {
-    PersonList original = createPersonList(2);
-    original.people[0].name = "Alice";
-    original.people[0].age = 30;
-    original.people[1].name = "Bob";
-    original.people[1].age = 25;
+    // Assuming createPersonList is defined and creates a list of people named "Jane Doe" with age 1
+    PersonList original = createPersonList(3); // Need to have the createPersonList function
 
     // Perform a shallow copy
     PersonList copy = shallowCopyPersonList(original);
 
-    // Demonstrating that changing the copy also changes the original
-    copy.people[0].name = "Changed Name";
+    // Demonstrate that the copy is indeed shallow
+    // Change the name and age of the first person in the original list
+    original.people[0].name = "John Smith";
+    original.people[0].age = 30;
 
-    std::cout << "Original List First Person's Name: " << original.people[0].name << std::endl;
-    std::cout << "Copied List First Person's Name: " << copy.people[0].name << std::endl;
+    // Display the first person from both lists to show they have been updated
+    std::cout << "Original first person: " << original.people[0].name << ", " << original.people[0].age << std::endl;
+    std::cout << "Copied first person: " << copy.people[0].name << ", " << copy.people[0].age << std::endl;
 
-   
-    delete[] original.people;
+    
+    delete[] original.people; 
+
     return 0;
 }

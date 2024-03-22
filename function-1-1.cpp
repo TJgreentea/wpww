@@ -1,9 +1,11 @@
+// function-1-1.cpp
 #include "Person.h"
-Person* createPersonArray(int n){
-  Person*Array=new Person[n];
-  for (int i=0;i<n;++i){
-    Array[i].name="Jone Doe";
-    Array[i].age=0;
-}
-return Array;
+
+Person* createPersonArray(int n) {
+    Person* array = new Person[n];
+    for (int i = 0; i < n; ++i) {
+        array[i].name = "John Doe";
+        array[i].age = 0;
+    }
+    return array;
 }
