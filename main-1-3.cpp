@@ -1,13 +1,12 @@
-
+// main-1-3.cpp
 #include <iostream>
 #include "Person.h"
 
-
-PersonList deepCopyPersonList(PersonList pl);
+extern PersonList createPersonList(int n);
+extern PersonList deepCopyPersonList(PersonList pl);
 
 int main() {
-    
-    PersonList original = createPersonList(2); 
+    PersonList original = createPersonList(2);
     original.people[0].name = "Alice";
     original.people[0].age = 30;
     original.people[1].name = "Bob";
@@ -27,9 +26,7 @@ int main() {
         std::cout << "Person " << i + 1 << ": Name = " << copy.people[i].name << ", Age = " << copy.people[i].age << std::endl;
     }
 
-    
     delete[] original.people;
     delete[] copy.people;
-
     return 0;
 }
