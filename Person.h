@@ -12,4 +12,7 @@ struct PersonList {
     Person* people;
     int numPeople;
 };
+
+PersonList createPersonList(int n);
+
 #endif 

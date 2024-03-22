@@ -6,7 +6,7 @@
 PersonList deepCopyPersonList(PersonList pl);
 
 int main() {
-    // Create an initial PersonList
+    
     PersonList original = createPersonList(2); 
     original.people[0].name = "Alice";
     original.people[0].age = 30;
