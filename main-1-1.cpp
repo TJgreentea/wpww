@@ -1,6 +1,6 @@
 // main-1-1.cpp
 #include <iostream>
-#include "person.h"
+#include "Person.h"
 Person* createPersonArray(int n);
 
 int main() {
